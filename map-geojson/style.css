@@ -1,0 +1,12 @@
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+#fitBounds {
+            background-color: #B7EB74;
+            font-family: Helvetica, Arial, Sans-Serif;
+            color: #000;
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            padding: 0.7em;
+            cursor: pointer;
+        }
