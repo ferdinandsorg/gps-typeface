@@ -1,3 +1,13 @@
+init();
+
+function init() {
+	var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+	for (var i = 0; i < alphabet.length; i++) {
+		$("#letterOverview").append("<li><button class='button letterButton' data-letter='"+alphabet[i]+"'>"+alphabet[i]+"</button></li>");
+	}
+}
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiZmVyZGluYW5kc29yZyIsImEiOiJja3VvOHZleHAwczY0MnBvYXI0cHQ1eXZqIn0.Z8sROkSQ-Ovu-HERdbyeAg';
 const map = new mapboxgl.Map({
 	container: 'map',
@@ -43,7 +53,12 @@ function loadLetter(geojson, letter) {
 	prevLetter = letter;
 }
 
-function fit(letter) {
+$(".letterButton").on("click", function() {
+    var letter = $(this).attr("data-letter");
+		drawLetter(letter);
+});
+
+function drawLetter(letter) {
 	var url = "data/typeface-"+letter+".geojson";
 	$.getJSON(url, function(data) {
 
