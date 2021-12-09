@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Velo Type</title>
+  <link rel="stylesheet" href="./css/archivo.css">
+  <link rel="stylesheet" href="./style.css">
+  <style media="screen">
+  .navigationTool {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: none;
+  }
+  .cursorLine {
+    background-color: var(--colorMain);
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  .cursorLine.verticalCursor {
+    width: 1px;
+    height: 100vh;
+  }
+  .cursorLine.horizontalCursor {
+    width: 100%;
+    height: 1px;
+  }
+  .cursorPoint {
+    background-color: var(--colorMain);
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="navigationTool">
+    <span class="cursorLine verticalCursor"></span>
+    <span class="cursorLine horizontalCursor"></span>
+    <span class="cursorPoint"></span>
+  </div>
+
+
+  <script src='./js/jquery.min.js'></script>
+  <!-- <script src='./js/mapbox-gl.js'></script> -->
+  <!-- <script src='./js/turf.min.js'></script> -->
+  <!-- <script src='./js/splitting.min.js'></script> -->
+  <!-- <script  src="./script.js"></script> -->
+
+  <!-- activate splitting -->
+  <!-- <script> Splitting(); </script> -->
+
+  <script type="text/javascript">
+  $(".navigationTool").mousemove(function( event ) {
+    var x = event.clientX;
+    var y = event.clientY;
+
+    $(".cursorLine.verticalCursor").css("left", x);
+    $(".cursorLine.horizontalCursor").css("top", y);
+    $(".cursorPoint").css({
+      top: y-2,
+      left: x-2
+    });
+  });
+  </script>
+</body>
+</html>

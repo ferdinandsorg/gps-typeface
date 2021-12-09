@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx version="1.1" creator="https://www.komoot.de" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>typeface ,</name>
+    <author>
+      <link href="https://www.komoot.de">
+        <text>komoot</text>
+        <type>text/html</type>
+      </link>
+    </author>
+  </metadata>
+  <trk>
+    <name>typeface ,</name>
+    <trkseg>
+      <trkpt lat="51.333983" lon="12.384051">
+        <ele>114.613290</ele>
+        <time>2021-10-13T16:02:51.898Z</time>
+      </trkpt>
+      <trkpt lat="51.333983" lon="12.384051">
+        <ele>114.613290</ele>
+        <time>2021-10-13T16:02:51.904Z</time>
+      </trkpt>
+      <trkpt lat="51.333645" lon="12.383871">
+        <ele>114.613290</ele>
+        <time>2021-10-13T16:02:59.129Z</time>
+      </trkpt>
+      <trkpt lat="51.333499" lon="12.383799">
+        <ele>114.613290</ele>
+        <time>2021-10-13T16:03:01.974Z</time>
+      </trkpt>
+      <trkpt lat="51.333159" lon="12.383630">
+        <ele>114.613290</ele>
+        <time>2021-10-13T16:03:08.359Z</time>
+      </trkpt>
+      <trkpt lat="51.333063" lon="12.383578">
+        <ele>114.612156</ele>
+        <time>2021-10-13T16:03:10.243Z</time>
+      </trkpt>
+      <trkpt lat="51.332902" lon="12.383490">
+        <ele>114.609279</ele>
+        <time>2021-10-13T16:03:12.815Z</time>
+      </trkpt>
+      <trkpt lat="51.332699" lon="12.383380">
+        <ele>114.605655</ele>
+        <time>2021-10-13T16:03:16.545Z</time>
+      </trkpt>
+      <trkpt lat="51.332695" lon="12.383675">
+        <ele>114.602537</ele>
+        <time>2021-10-13T16:03:23.322Z</time>
+      </trkpt>
+      <trkpt lat="51.332730" lon="12.383957">
+        <ele>114.599499</ele>
+        <time>2021-10-13T16:03:30.340Z</time>
+      </trkpt>
+      <trkpt lat="51.332823" lon="12.384344">
+        <ele>114.595118</ele>
+        <time>2021-10-13T16:03:40.174Z</time>
+      </trkpt>
+      <trkpt lat="51.332932" lon="12.384667">
+        <ele>114.591240</ele>
+        <time>2021-10-13T16:03:48.599Z</time>
+      </trkpt>
+      <trkpt lat="51.333009" lon="12.384895">
+        <ele>114.588501</ele>
+        <time>2021-10-13T16:03:54.363Z</time>
+      </trkpt>
+      <trkpt lat="51.333480" lon="12.385111">
+        <ele>114.582873</ele>
+        <time>2021-10-13T16:04:10.961Z</time>
+      </trkpt>
+      <trkpt lat="51.333736" lon="12.385229">
+        <ele>114.582873</ele>
+        <time>2021-10-13T16:04:19.787Z</time>
+      </trkpt>
+      <trkpt lat="51.333983" lon="12.384051">
+        <ele>114.582873</ele>
+        <time>2021-10-13T16:04:29.167Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

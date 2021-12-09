@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="700" onload="if(self.makeDraggable){makeDraggable(evt)}" width="700" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g id="mundialis_osm:background" opacity="0.5">
+		<image height="700" id="background_map_1" opacity="1" style="mix-blend-mode:normal" width="700" x="0" xlink:href="https://ows.terrestris.de/osm/service?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;format=image/jpeg&amp;exception=inimage&amp;crs=EPSG:4326&amp;styles=&amp;layers=OSM-WMS&amp;bbox=51.3136450,12.3660554,51.3322830,12.3958576&amp;width=700&amp;height=700" y="0" />
+	</g>
+	<g id="trk1:typeface_L" opacity="1">
+		<polyline fill="none" id="trk1:p218" points=" 176.599,40.000 176.599,40.000 178.948,40.826 179.911,41.202 180.380,41.352 182.212,42.028 182.776,42.216 184.397,42.817 186.229,43.305 195.859,44.620 207.298,46.272 212.958,47.061 224.773,48.864 244.902,51.943 268.555,54.948 274.967,55.962 277.175,56.300 285.396,57.614 287.980,58.291 285.137,75.304 284.292,79.248 284.151,80.074 282.648,88.524 280.534,100.393 280.041,102.834 277.222,118.796 271.326,150.194 270.363,155.227 268.884,163.114 265.619,181.780 264.938,185.423 263.599,192.671 261.837,202.173 261.297,206.004 257.680,225.835 256.224,232.708 256.012,241.872 255.965,243.937 255.472,252.275 254.908,269.439 254.063,303.391 253.828,319.578 253.452,343.803 252.818,380.234 252.912,384.591 252.677,393.229 252.606,396.083 252.066,419.031 251.667,435.594 251.549,441.603 250.915,478.034 250.563,491.442 250.445,496.174 249.929,515.253 249.717,521.863 249.694,523.779 249.600,530.727 249.482,542.407 249.365,551.496 249.342,553.937 258.854,553.937 258.854,554.088 282.342,554.200 288.990,554.276 289.459,554.276 289.530,551.346 289.953,551.346 297.751,551.496 299.653,551.534 301.321,551.571 305.596,551.684 340.147,552.811 348.978,552.999 356.447,553.261 365.796,553.186 375.778,553.111 383.506,553.261 393.958,553.487 402.414,553.599 410.893,553.675 412.138,553.750 416.483,553.825 416.483,553.825 469.919,554.689 476.589,552.736 481.217,560.811 493.172,580.228 513.348,620.039 525.045,641.672 529.273,649.521 531.646,660.000 526.995,659.737 526.431,657.897 525.844,655.981 525.703,655.493 469.496,655.831 437.294,656.019 409.977,656.132 404.293,654.291 398.562,652.338 396.894,651.812 395.391,651.324 391.022,650.348 387.593,650.047 375.308,650.047 367.135,650.122 364.316,650.122 329.037,650.385 326.124,650.385 308.673,650.498 297.398,650.535 294.462,650.573 292.466,650.573 288.027,650.573 282.248,650.648 281.473,650.648 249.929,650.761 247.815,650.761 244.479,650.798 210.539,650.986 201.989,651.061 186.135,651.061 181.085,651.136 180.005,651.136 179.065,651.174 173.710,651.362 172.394,651.399 170.327,651.474 168.354,651.550 168.401,657.333 170.398,657.258 171.713,657.183 173.545,657.108 173.592,655.042 173.616,654.592 173.663,652.639 173.710,651.362 173.710,651.362 173.757,649.033 173.921,644.301 174.015,636.301 174.156,623.043 174.203,621.090 174.132,618.011 173.710,610.349 173.992,591.382 174.132,586.087 174.461,566.707 174.602,562.125 175.495,555.102 175.636,553.825 175.330,549.919 174.978,544.285 175.354,517.995 175.354,513.713 175.565,497.301 175.918,483.517 177.115,476.381 177.280,468.719 177.327,464.025 177.397,459.217 177.515,446.786 177.515,446.260 177.632,440.138 177.656,437.472 177.656,434.279 177.891,428.270 177.703,425.153 177.139,418.843 177.256,412.308 177.209,406.149 178.360,387.182 178.595,385.605 178.666,383.088 178.619,380.609 177.844,374.713 178.243,356.760 178.290,351.690 179.370,344.216 179.347,342.038 179.229,339.371 178.595,334.339 178.760,324.498 179.840,318.715 180.052,309.475 180.052,308.161 180.052,302.903 180.075,297.119 180.052,288.706 180.052,282.659 180.169,277.176 180.662,267.524 180.310,263.505 179.135,258.998 178.689,257.346 179.652,234.999 180.005,227.938 180.451,210.737 181.038,209.647 182.400,206.718 182.471,202.812 181.343,190.794 177.820,164.916 174.814,142.532 174.461,138.814 175.307,106.026 175.401,102.608 175.495,98.177 175.096,95.172 174.720,92.243 175.542,84.656 177.327,66.365 179.300,47.098 179.441,45.709 179.911,41.202 178.948,40.826 176.599,40.000 176.599,40.000" stroke="#cc0000" stroke-linejoin="round" stroke-width="2" />
+	</g>
+	<g class="draggable" id="trk1:label" opacity="1" x="178.599" y="38">
+		<text fill="#cc0000" font-family="Verdana" font-size="11" id="trk1:name" opacity="1" text-anchor="middle" x="178.599" y="38">typeface L</text>
+	</g>
+	<g id="Waypoints" />
+	<g class="draggable" id="map:legend" x="6" y="686">
+		<text fill="#cc0000" font-family="Verdana" font-size="11" font-weight="bold" id="map:legend:trktrk1_label" text-anchor="start" x="6" y="686">typeface L</text>
+		<text fill="#000000" font-family="Verdana" font-size="11" font-weight="bold" id="map:legend:header" text-anchor="start" x="6" y="672.25">Tracks:</text>
+	</g>
+	<g class="draggable" id="Scale" x="350" y="350">
+		<line fill="none" id="scale_line" stroke="#000000" stroke-width="1" x1="180.739898222754" x2="519.260101777246" y1="681" y2="681" />
+		<line fill="none" id="scale_end1" stroke="#000000" stroke-width="1" x1="180.739898222754" x2="180.739898222754" y1="679" y2="683" />
+		<line fill="none" id="scale_end2" stroke="#000000" stroke-width="1" x1="519.260101777246" x2="519.260101777246" y1="679" y2="683" />
+		<text fill="#000000" font-family="Verdana" font-size="11" id="scale_text" text-anchor="middle" x="350" y="679">1 km</text>
+	</g>
+	<g id="map:logo" x="350" y="697">
+		<rect fill="#FFFFFF" height="11" opacity="0.6" width="160" x="270" y="688" />
+		<a href="https://www.gpsvisualizer.com/" target="_blank">
+			<text fill="#000000" font-family="Verdana" font-size="9" text-anchor="middle" transform="translate(350,697) rotate(0) translate(-350,-697)" x="350" y="697">created by GPSVisualizer.com</text>
+		</a>
+	</g>
+	<rect fill="none" height="699" id="image_border" opacity="0" stroke="#000000" stroke-width="1" width="699" x="0.5" y="0.5" />
+	<style type="text/css">.draggable { cursor:move; }</style>
+	<script type="text/javascript"><![CDATA[
+		function makeDraggable(evt) {
+			var svg = evt.target; svg.addEventListener('mousedown', startDrag); svg.addEventListener('mousemove', drag); svg.addEventListener('mouseup', endDrag); svg.addEventListener('mouseleave', endDrag); svg.addEventListener('touchstart', startDrag); svg.addEventListener('touchmove', drag); svg.addEventListener('touchend', endDrag); svg.addEventListener('touchleave', endDrag); svg.addEventListener('touchcancel', endDrag); var selectedElement, offset, transform, bbox, minX, maxX, minY, maxY;
+			function getMousePosition(evt) { var CTM = svg.getScreenCTM(); if(evt.touches) { evt = evt.touches[0]; } return { x:(evt.clientX-CTM.e)/CTM.a, y:(evt.clientY-CTM.f)/CTM.d }; }
+			function startDrag(evt) { if(evt.target.classList && evt.target.classList.contains('draggable')) { selectedElement = evt.target; initialiseDragging(evt); } else if(evt.target.parentNode) { if(evt.target.parentNode.classList && evt.target.parentNode.classList.contains('draggable')) { selectedElement = evt.target.parentNode; initialiseDragging(evt); } else if(evt.target.parentNode.parentNode && evt.target.parentNode.parentNode.classList && evt.target.parentNode.parentNode.classList.contains('draggable')) { selectedElement = evt.target.parentNode.parentNode; initialiseDragging(evt); } } }
+			function initialiseDragging(evt) { offset = getMousePosition(evt); var transforms = selectedElement.transform.baseVal; if(transforms.length === 0 || transforms.getItem(0).type !== SVGTransform.SVG_TRANSFORM_TRANSLATE) { var translate = svg.createSVGTransform(); translate.setTranslate(0,0); selectedElement.transform.baseVal.insertItemBefore(translate,0); } transform = transforms.getItem(0); offset.x -= transform.matrix.e; offset.y -= transform.matrix.f; }
+			function drag(evt) { if(selectedElement) { evt.preventDefault(); var coord = getMousePosition(evt); var dx = coord.x-offset.x; var dy = coord.y-offset.y; transform.setTranslate(dx, dy); } }
+			function endDrag(evt) { selectedElement = false; }
+		}
+]]></script>
+	<!-- 		debugging stuff:
+		key = 20211016065425-08061
+		min. track = 
+		max. track = 
+		colorize min = 
+		colorize max = 
+		colorize range = 0
+		upper left (data) = 51.331218,12.373223
+		lower right (data) = 51.314710,12.388690
+		upper left (drawing) = 51.3322830322581,12.3660553680864
+		lower right (drawing) = 51.3136449677419,12.3958576319136
+		center = 51.322964,12.3809565
+		width,height (pixels) = 700,700
+		width,height (degrees) = 0.0298022638272677,0.018638064516125
+		scale = 8402, resolution = 2.964 m/pixel
+		bgmap = https://ows.terrestris.de/osm/service?service=WMS&version=1.3.0&request=GetMap&format=image/jpeg&exception=inimage&crs=EPSG:4326&styles=&layers=OSM-WMS&bbox=51.3136450,12.3660554,51.3322830,12.3958576&width=700&height=700
+		input form = https://www.gpsvisualizer.com/map_input?form=svg&units=metric
+ -->
+	<!-- 
+	Generated using the Perl SVG Module V2.59
+	by Ronan Oger
+	Info: http://www.roitsystems.com/
+ -->
+</svg>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="700" onload="if(self.makeDraggable){makeDraggable(evt)}" width="700" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g id="mundialis_osm:background" opacity="0.5">
+		<image height="700" id="background_map_1" opacity="1" style="mix-blend-mode:normal" width="700" x="0" xlink:href="https://ows.terrestris.de/osm/service?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;format=image/jpeg&amp;exception=inimage&amp;crs=EPSG:4326&amp;styles=&amp;layers=OSM-WMS&amp;bbox=51.3255800,12.3599302,51.3358000,12.3762748&amp;width=700&amp;height=700" y="0" />
+	</g>
+	<g id="trk1:typeface_V" opacity="1">
+		<polyline fill="none" id="trk1:p145" points=" 207.191,105.342 209.075,111.438 218.155,147.329 225.435,176.438 227.877,186.027 236.314,220.000 237.427,225.137 245.479,255.479 258.970,306.164 262.182,318.219 278.499,379.932 283.596,399.247 288.735,418.014 298.200,453.630 307.279,488.151 312.333,508.425 314.389,516.575 318.800,534.178 327.622,568.288 331.049,580.479 331.391,581.849 343.983,632.534 348.737,639.521 358.030,646.712 350.193,656.507 354.433,660.000 359.957,653.219 392.164,613.630 408.738,593.151 426.084,572.123 444.028,553.562 447.112,548.699 452.508,548.767 452.680,541.164 452.551,533.836 455.121,528.356 461.716,514.247 464.500,506.986 470.924,492.534 479.233,472.945 481.931,463.288 483.002,457.329 483.430,452.466 483.773,449.315 484.201,444.384 484.629,436.301 486.128,408.493 486.556,400.411 487.713,382.123 490.282,343.151 491.567,320.890 492.081,310.822 492.552,302.055 492.638,297.877 492.809,289.589 491.824,280.822 488.098,248.493 487.242,237.877 485.957,224.795 485.143,216.164 484.029,208.288 481.117,187.877 480.218,181.370 475.764,150.274 471.781,122.466 471.395,119.452 468.654,100.205 467.841,94.384 466.984,75.616 467.155,69.384 467.541,62.740 468.397,58.904 466.256,59.110 464.671,59.178 462.444,59.384 459.318,59.658 456.877,59.795 452.894,60.137 452.979,58.493 453.108,54.315 453.193,50.548 453.236,48.630 453.279,47.603 453.322,45.548 453.365,44.521 453.408,42.877 453.493,40.000 450.709,40.685 418.589,48.288 408.310,50.822 398.074,53.288 381.329,57.397 374.605,60.685 367.067,63.562 362.955,64.932 355.418,67.603 358.244,72.123 359.872,73.904 359.872,73.904 360.771,78.425 361.157,80.479 365.782,97.740 367.966,105.822 377.260,140.548 377.003,143.562 380.386,146.096 381.885,147.260 380.429,151.918 401.629,233.425 402.485,236.644 404.199,243.151 407.796,256.507 408.867,260.548 410.494,266.644 412.079,272.534 413.364,277.260 423.343,278.562 413.364,352.055 408.524,387.603 395.119,429.863 383.084,467.945 375.718,469.863 375.718,469.863 357.473,399.863 355.718,393.151 353.705,385.822 352.505,381.370 333.790,311.507 330.920,300.822 322.612,268.288 319.571,259.795 316.273,250.479 311.005,225.205 299.570,178.493 296.829,167.329 288.221,135.890 284.709,123.219 282.611,115.548 277.043,95.274 275.373,89.041 275.373,89.041 275.373,89.041 238.541,97.671 207.191,105.342 207.191,105.342" stroke="#cc0000" stroke-linejoin="round" stroke-width="2" />
+	</g>
+	<g class="draggable" id="trk1:label" opacity="1" x="209.191" y="103.342">
+		<text fill="#cc0000" font-family="Verdana" font-size="11" id="trk1:name" opacity="1" text-anchor="middle" x="209.191" y="103.342">typeface V</text>
+	</g>
+	<g id="Waypoints" />
+	<g class="draggable" id="map:legend" x="6" y="686">
+		<text fill="#cc0000" font-family="Verdana" font-size="11" font-weight="bold" id="map:legend:trktrk1_label" text-anchor="start" x="6" y="686">typeface V</text>
+		<text fill="#000000" font-family="Verdana" font-size="11" font-weight="bold" id="map:legend:header" text-anchor="start" x="6" y="672.25">Tracks:</text>
+	</g>
+	<g class="draggable" id="Scale" x="350" y="350">
+		<line fill="none" id="scale_line" stroke="#000000" stroke-width="1" x1="41.3228280890615" x2="658.677171910938" y1="681" y2="681" />
+		<line fill="none" id="scale_end1" stroke="#000000" stroke-width="1" x1="41.3228280890615" x2="41.3228280890615" y1="679" y2="683" />
+		<line fill="none" id="scale_end2" stroke="#000000" stroke-width="1" x1="658.677171910938" x2="658.677171910938" y1="679" y2="683" />
+		<text fill="#000000" font-family="Verdana" font-size="11" id="scale_text" text-anchor="middle" x="350" y="679">1 km</text>
+	</g>
+	<g id="map:logo" x="350" y="697">
+		<rect fill="#FFFFFF" height="11" opacity="0.6" width="160" x="270" y="688" />
+		<a href="https://www.gpsvisualizer.com/" target="_blank">
+			<text fill="#000000" font-family="Verdana" font-size="9" text-anchor="middle" transform="translate(350,697) rotate(0) translate(-350,-697)" x="350" y="697">created by GPSVisualizer.com</text>
+		</a>
+	</g>
+	<rect fill="none" height="699" id="image_border" opacity="0" stroke="#000000" stroke-width="1" width="699" x="0.5" y="0.5" />
+	<style type="text/css">.draggable { cursor:move; }</style>
+	<script type="text/javascript"><![CDATA[
+		function makeDraggable(evt) {
+			var svg = evt.target; svg.addEventListener('mousedown', startDrag); svg.addEventListener('mousemove', drag); svg.addEventListener('mouseup', endDrag); svg.addEventListener('mouseleave', endDrag); svg.addEventListener('touchstart', startDrag); svg.addEventListener('touchmove', drag); svg.addEventListener('touchend', endDrag); svg.addEventListener('touchleave', endDrag); svg.addEventListener('touchcancel', endDrag); var selectedElement, offset, transform, bbox, minX, maxX, minY, maxY;
+			function getMousePosition(evt) { var CTM = svg.getScreenCTM(); if(evt.touches) { evt = evt.touches[0]; } return { x:(evt.clientX-CTM.e)/CTM.a, y:(evt.clientY-CTM.f)/CTM.d }; }
+			function startDrag(evt) { if(evt.target.classList && evt.target.classList.contains('draggable')) { selectedElement = evt.target; initialiseDragging(evt); } else if(evt.target.parentNode) { if(evt.target.parentNode.classList && evt.target.parentNode.classList.contains('draggable')) { selectedElement = evt.target.parentNode; initialiseDragging(evt); } else if(evt.target.parentNode.parentNode && evt.target.parentNode.parentNode.classList && evt.target.parentNode.parentNode.classList.contains('draggable')) { selectedElement = evt.target.parentNode.parentNode; initialiseDragging(evt); } } }
+			function initialiseDragging(evt) { offset = getMousePosition(evt); var transforms = selectedElement.transform.baseVal; if(transforms.length === 0 || transforms.getItem(0).type !== SVGTransform.SVG_TRANSFORM_TRANSLATE) { var translate = svg.createSVGTransform(); translate.setTranslate(0,0); selectedElement.transform.baseVal.insertItemBefore(translate,0); } transform = transforms.getItem(0); offset.x -= transform.matrix.e; offset.y -= transform.matrix.f; }
+			function drag(evt) { if(selectedElement) { evt.preventDefault(); var coord = getMousePosition(evt); var dx = coord.x-offset.x; var dy = coord.y-offset.y; transform.setTranslate(dx, dy); } }
+			function endDrag(evt) { selectedElement = false; }
+		}
+]]></script>
+	<!-- 		debugging stuff:
+		key = 20211016065447-08061
+		min. track = 
+		max. track = 
+		colorize min = 
+		colorize max = 
+		colorize range = 0
+		upper left (data) = 51.335216,12.364768
+		lower right (data) = 51.326164,12.371437
+		upper left (drawing) = 51.3358,12.3599302313476
+		lower right (drawing) = 51.32558,12.3762747686524
+		center = 51.33069,12.3681025
+		width,height (pixels) = 700,700
+		width,height (degrees) = 0.0163445373048159,0.010220000000011
+		scale = 4607, resolution = 1.625 m/pixel
+		bgmap = https://ows.terrestris.de/osm/service?service=WMS&version=1.3.0&request=GetMap&format=image/jpeg&exception=inimage&crs=EPSG:4326&styles=&layers=OSM-WMS&bbox=51.3255800,12.3599302,51.3358000,12.3762748&width=700&height=700
+		input form = https://www.gpsvisualizer.com/map_input?form=svg&units=metric
+ -->
+	<!-- 
+	Generated using the Perl SVG Module V2.59
+	by Ronan Oger
+	Info: http://www.roitsystems.com/
+ -->
+</svg>

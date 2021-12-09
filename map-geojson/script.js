@@ -1,10 +1,13 @@
+var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",".",",","–"];
+var bbox, currentLetter, prevLetter, arrowSign;
+
 init();
 
 function init() {
-	var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-
 	for (var i = 0; i < alphabet.length; i++) {
-		$("#letterOverview").append("<li><button class='button letterButton' data-letter='"+alphabet[i]+"'>"+alphabet[i]+"</button></li>");
+		var buttonWidth = "calc(100% / "+alphabet.length+")";
+		$(".arrows").css("width", buttonWidth);
+		$("#letterOverview").append("<li style='width:"+buttonWidth+"'><button class='button letterButton' data-char='"+alphabet[i]+"'>"+alphabet[i]+"</button></li>");
 	}
 }
 
@@ -12,14 +15,22 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZmVyZGluYW5kc29yZyIsImEiOiJja3VvOHZleHAwczY0M
 const map = new mapboxgl.Map({
 	container: 'map',
 	// dark
-	style: 'mapbox://styles/ferdinandsorg/cji77ibe8231u2sqp2gwokaet',
+	// style: 'mapbox://styles/ferdinandsorg/ckuphc9rs0he617k95nwqdchq',
 	// satellite
-	// style: 'mapbox://styles/ferdinandsorg/ckuokw3ia19oj17mrb6r9mtza',
-	center: [0,0],
+	style: 'mapbox://styles/ferdinandsorg/ckuokw3ia19oj17mrb6r9mtza',
+	//Leipzig coordinates
+	center: [12.360103, 51.340199],
+	// center: [0,0],
 	zoom: 1
 });
 
-var bbox, prevLetter;
+// display coordinates in header
+map.on('mousemove', (e) => {
+	var translatedLat = dg2gms(e.lngLat.lat, 'x');
+	var translatedLng = dg2gms(e.lngLat.lng, 'y');
+	$("#coordinates .gms").text("["+translatedLat+" "+translatedLng+"]");
+	$("#coordinates .dg").text("["+e.lngLat.lat+","+e.lngLat.lng+"]");
+});
 
 function loadLetter(geojson, letter) {
 
@@ -45,7 +56,7 @@ function loadLetter(geojson, letter) {
 			'line-cap': 'round'
 		},
 		"paint": {
-			"line-color": "#B7EB74",
+			"line-color": "#AEF553",
 			"line-width": 10
 		}
 	});
@@ -53,13 +64,32 @@ function loadLetter(geojson, letter) {
 	prevLetter = letter;
 }
 
-$(".letterButton").on("click", function() {
-    var letter = $(this).attr("data-letter");
-		drawLetter(letter);
+
+// trigger Letter
+$(document).on("click touchend", ".letterButton, .char", function () {
+	console.log("hallo logo");
+	// get letter
+	letter = $(this).attr("data-char");
+	drawLetter(letter);
 });
 
 function drawLetter(letter) {
-	var url = "data/typeface-"+letter+".geojson";
+	letter = letter.toLowerCase();
+	currentLetter = letter;
+
+	// remove all active status
+	$("ul#letterOverview .letterButton").removeClass("active");
+	// add active status to selected
+	$("ul#letterOverview").find("[data-char='"+letter+"']").addClass("active");
+	console.log("letter is "+letter);
+
+	//check if letter is valid
+	if(typeof letter !== "undefined") {
+		var url = "data/typeface-"+letter+".geojson";
+	} else {
+		var url = "data/typeface-a.geojson";
+	}
+
 	$.getJSON(url, function(data) {
 
 		// load Letter into Map
@@ -67,10 +97,115 @@ function drawLetter(letter) {
 
 		// center map to Letter
 		bbox = turf.extent(data);
-		map.fitBounds(bbox, {padding: 40});
+		map.fitBounds(bbox, {padding: 120});
 	});
 }
 
-function changeStyle() {
-	map.setStyle('mapbox://styles/ferdinandsorg/ckuokw3ia19oj17mrb6r9mtza');
+$(".arrows").on("click", function() {
+	var direction = $(this).attr("name");
+	var indexOfLetter = jQuery.inArray(currentLetter, alphabet);
+	if (direction == "arrowPrev") {
+		$(this).text("←");
+		// check if currentLetter is first Item
+		if (indexOfLetter == 0) {
+			// jump to last Item in alphabet
+			drawLetter(alphabet[alphabet.length-1]);
+			$(this).text(alphabet[alphabet.length-2]);
+		} else {
+			drawLetter(alphabet[indexOfLetter-1]);
+			$(this).text(alphabet[indexOfLetter-2]);
+		}
+	}
+	if (direction == "arrowNext") {
+		// check if currentLetter is the last in the alphabet
+		if (indexOfLetter == alphabet.length-1) {
+			// jump to first Item
+			drawLetter(alphabet[0]);
+			$(this).text(alphabet[1]);
+		} else {
+			drawLetter(alphabet[indexOfLetter+1]);
+			$(this).text(alphabet[indexOfLetter+2]);
+		}
+	}
+});
+
+$( ".arrows" ).hover(
+	function() {
+		var direction = $(this).attr("name");
+		arrowSign = $(this).text();
+		var indexOfLetter = jQuery.inArray(currentLetter, alphabet);
+		if (direction == "arrowPrev") {
+			// check if currentLetter is first Item
+			if (indexOfLetter == 0) {
+				// jump to last Item in alphabet
+				$(this).text(alphabet[alphabet.length-1]);
+			} else {
+				$(this).text(alphabet[indexOfLetter-1]);
+			}
+		}
+		if (direction == "arrowNext") {
+			// check if currentLetter is the last in the alphabet
+			if (indexOfLetter == alphabet.length-1) {
+				// jump to first Item
+				$(this).text(alphabet[0]);
+			} else {
+				$(this).text(alphabet[indexOfLetter+1]);
+			}
+		}
+	}, function() {
+		$(this).text(arrowSign);
+	}
+);
+
+// individual cursor
+$("#map").mousemove(function( event ) {
+
+	var x = event.clientX;
+	var y = event.clientY;
+
+	var mapWidth = $("#map").width();
+	var mapHeight = $("#map").height();
+
+	var logoWdth = mapFunc(x, 0, mapWidth, 125, 62);
+	var logoWght = mapFunc(y, 0, mapHeight, 100, 900);
+
+	$('a#logo .word').css('font-variation-settings', '"wdth" '+logoWdth+', "wght" '+logoWght);
+
+	$(".cursorLine.verticalCursor").css("left", x);
+	$(".cursorLine.horizontalCursor").css("top", y);
+	// $(".coordinates").text("["+x+", "+y+"]");
+	$(".cursorPoint").css({
+		top: y-5,
+		left: x-5
+	});
+});
+
+$("#map").mouseenter(function() {
+	$(".navigationTool").fadeIn("fast");
+}).mouseleave(function() {
+	$(".navigationTool").fadeOut("fast");
+});
+
+$('#map').on('mousedown', function() {
+	$(".cursorPoint").css("border-radius", "8px");
+}).on('mouseup mouseleave', function() {
+	$(".cursorPoint").css("border-radius", "0");
+});
+
+function dg2gms(dec, dir) {
+	var plus=Math.abs(dec);
+	var degr=Math.floor(plus);
+	var minu=Math.floor(60*(plus-degr));
+	var sec=Math.floor(60*(60*(plus-degr)-minu));
+	var compass="?"
+	if (minu<10) {minu="0"+minu};
+	if (sec<10) {sec="0"+sec};
+	if (dir=='x') compass=dec<0?"S":"N";
+	else compass=dec<0?"W":"E";
+	return degr+"° "+minu+"' "+sec+'" '+compass;
+}
+
+
+function mapFunc(val, low1, high1, low2, high2) {
+	return (val - low1) / (high1 - low1) * (high2 - low2) + low2;
 }
