@@ -6,9 +6,22 @@ init();
 function init() {
 	for (var i = 0; i < alphabet.length; i++) {
 		var buttonWidth = "calc(100% / "+alphabet.length+")";
+		// var buttonWidth = "100px";
 		$(".arrows").css("width", buttonWidth);
 		$("#letterOverview").append("<li style='width:"+buttonWidth+"'><button class='button letterButton' data-char='"+alphabet[i]+"'>"+alphabet[i]+"</button></li>");
+
+		// which letters are missing?
+		checkAviableLetter(alphabet[i]);
+
 	}
+}
+
+function checkAviableLetter(letter) {
+	$.get("data/typeface-"+letter+".geojson").done(function() {
+			// console.log("✓ – "+letter+" does exist"); ;
+	}).fail(function() {
+			console.log(letter);
+	});
 }
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZmVyZGluYW5kc29yZyIsImEiOiJja3VvOHZleHAwczY0MnBvYXI0cHQ1eXZqIn0.Z8sROkSQ-Ovu-HERdbyeAg';
@@ -24,13 +37,27 @@ const map = new mapboxgl.Map({
 	zoom: 1
 });
 
+//Check Mobile Devices
+function isTouch() {
+  return ('ontouchstart' in document.documentElement);
+}
+
+
 // display coordinates in header
-map.on('mousemove', (e) => {
-	var translatedLat = dg2gms(e.lngLat.lat, 'x');
-	var translatedLng = dg2gms(e.lngLat.lng, 'y');
-	$("#coordinates .gms").text("["+translatedLat+" "+translatedLng+"]");
-	$("#coordinates .dg").text("["+e.lngLat.lat+","+e.lngLat.lng+"]");
-});
+if ( isTouch() ) {
+	map.on('touchmove', (e) => {
+		var translatedLat = dg2gms(map.getCenter().lat, 'x');
+		var translatedLng = dg2gms(map.getCenter().lng, 'y');
+		$("#coordinates .gms").text("["+translatedLat+" "+translatedLng+"]");
+	});
+} else {
+	map.on('mousemove', (e) => {
+		var translatedLat = dg2gms(e.lngLat.lat, 'x');
+		var translatedLng = dg2gms(e.lngLat.lng, 'y');
+		$("#coordinates .gms").text("["+translatedLat+" "+translatedLng+"]");
+	});
+}
+
 
 function loadLetter(geojson, letter) {
 
@@ -70,6 +97,7 @@ $(document).on("click touchend", ".letterButton, .char", function () {
 	console.log("hallo logo");
 	// get letter
 	letter = $(this).attr("data-char");
+	$('#letterOverview').animate({scrollLeft:$(this).offset().left},'slow');
 	drawLetter(letter);
 });
 
@@ -163,20 +191,19 @@ $("#map").mousemove(function( event ) {
 	var x = event.clientX;
 	var y = event.clientY;
 
-	var mapWidth = $("#map").width();
-	var mapHeight = $("#map").height();
-
-	var logoWdth = mapFunc(x, 0, mapWidth, 125, 62);
-	var logoWght = mapFunc(y, 0, mapHeight, 100, 900);
-
-	$('a#logo .word').css('font-variation-settings', '"wdth" '+logoWdth+', "wght" '+logoWght);
+	// change logo font-variation on x,y cursor
+	// var mapWidth = $("#map").width();
+	// var mapHeight = $("#map").height();
+	// var logoWdth = mapFunc(x, 0, mapWidth, 125, 62);
+	// var logoWght = mapFunc(y, 0, mapHeight, 100, 900);
+	// $('a#logo .word').css('font-variation-settings', '"wdth" '+logoWdth+', "wght" '+logoWght);
 
 	$(".cursorLine.verticalCursor").css("left", x);
 	$(".cursorLine.horizontalCursor").css("top", y);
 	// $(".coordinates").text("["+x+", "+y+"]");
 	$(".cursorPoint").css({
-		top: y-5,
-		left: x-5
+		top: y-4,
+		left: x-4
 	});
 });
 

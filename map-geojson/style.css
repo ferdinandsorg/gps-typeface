@@ -3,12 +3,20 @@
 :root {
   --fontMain: 'Archivo', sans-serif;
   --fontStyleNormal: "wdth" 125, "wght" 400;
+  --fontStyleBold: "wdth" 125, "wght" 900;
   --fontStyleHover: "wdth" 62, "wght" 900;
   --fontStyleActive: "wdth" 62, "wght" 100;
   --colorMain: #AEF553;
   --colorDark: #000;
-  --colorLight: #fff;
+  --colorLight: #F4FAEC;
   --basicTransition: all 0.1s cubic-bezier(.32, .5, .78, .91);
+  --headerHeight: 52px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -19,7 +27,36 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--fontMain);
-  cursor: none;
+  background-color: var(--colorMain);
+}
+
+h1 {
+  font-variation-settings: var(--fontStyleBold);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.25rem;
+  font-variation-settings: "wdth" 86, "wght" 400;
+}
+
+small {
+  font-size: 0.5rem;
+}
+
+p a:link,
+p a:visited,
+.button.btn-text {
+  font-variation-settings: "wdth" 125, "wght" 400;
+  color: var(--colorDark);
+  transition: var(--basicTransition);
+}
+
+p a:hover,
+.button.btn-text:hover {
+  text-decoration: none;
+  font-variation-settings: "wdth" 86, "wght" 900;
 }
 
 #map {
@@ -27,6 +64,7 @@ body {
   top: 0;
   bottom: 0;
   width: 100%;
+  cursor: none;
 }
 
 /* header */
@@ -43,6 +81,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 2px solid var(--colorDark);
   background-color: var(--colorMain);
@@ -56,7 +95,6 @@ body {
 a#logo {
   color: var(--colorDark);
   font-variation-settings: var(--fontStyleNormal);
-  text-shadow: 0 0 5px transparent;
   text-decoration: none;
   font-size: 2rem;
   padding: 0 .2rem;
@@ -72,7 +110,6 @@ a#logo.split .char {
 
 a#logo.split .char:hover {
   font-variation-settings: var(--fontStyleHover);
-  text-shadow: 0 0 2px var(--colorMain);
 }
 
 a#logo #coordinates {
@@ -80,8 +117,17 @@ a#logo #coordinates {
   margin-left: 0.4rem;
 }
 
+.about a#logo {
+  font-variation-settings: "wdth" 62, "wght" 400;
+}
+
+.about a#logo .word .char:first-child,
+.about a#logo .word:hover,
+a#logo.split .char:hover {
+  font-variation-settings: var(--fontStyleBold);
+}
+
 .letterControl {
-  text-align: center;
   bottom: 0;
 }
 
@@ -96,12 +142,12 @@ ul#letterOverview {
 
 ul#letterOverview li {
   display: inline-block;
+  text-align: center;
 }
 
 .button {
   font-family: var(--fontMain);
   font-variation-settings: var(--fontStyleNormal);
-  text-shadow: 0 0 5px transparent;
   padding: 0;
   margin: 0;
   display: inline-block;
@@ -120,14 +166,12 @@ ul#letterOverview li {
 
 .button:hover {
   font-variation-settings: var(--fontStyleHover);
-  text-shadow: 0 0 2px var(--colorMain);
 }
 
 .button:focus,
 .button:active,
 .button.active {
   font-variation-settings: var(--fontStyleActive);
-  text-shadow: 0 0 2px var(--colorMain);
 }
 
 a.button.links {
@@ -141,6 +185,12 @@ a.button.links {
 }
 a.button.links:hover {
   font-variation-settings: "wdth" 100, "wght" 300;
+}
+
+.button.btn-text {
+  font-size: 1.25rem;
+  text-decoration: none;
+  padding: 0.1rem 0.25rem;
 }
 
 ul#letterOverview li .button {
@@ -201,7 +251,81 @@ ul#letterOverview li:last-child .button {
 .cursorPoint {
   background-color: transparent;
   position: fixed;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border: 2px solid var(--colorDark);
+}
+
+.blendMulti {
+  mix-blend-mode: multiply;
+}
+
+.contentPage {
+  padding-top: var(--headerHeight);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.infoBox {
+  border: 2px solid var(--colorDark);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: -webkit-fit-content;
+  max-width: 860px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.infoBox img {
+  width: 100%;
+}
+
+@media screen and (max-width:720px) {
+   .header #arrowPrev {
+     order: 1;
+   }
+   .header #logo {
+     order: 2;
+     width: fit-content;
+     flex-direction: column;
+   }
+   .header #arrowNext {
+     order: 3;
+   }
+   .header .links {
+     order: 4;
+     flex-basis: 50%;
+   }
+
+   a#logo #coordinates {
+     font-size: 0.6rem;
+     margin: 0;
+   }
+
+   ul#letterOverview {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+   }
+
+  ul#letterOverview li,
+  header .button  {
+     width: fit-content !important;
+   }
+   ul#letterOverview li .button {
+     padding: 0 0.5rem;
+   }
+   .button {
+     font-size: 3rem;
+   }
+   a.button.links {
+     border-top: 2px solid var(--colorDark);
+     font-size: 1.5rem;
+   }
+   a.button.links.download {
+     border-left: 0;
+   }
 }

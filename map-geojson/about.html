@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>GPS–T</title>
+  <!-- <link rel="stylesheet" href="./css/archivo.css"> -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="about">
+
+  <header class="header">
+    <a href="./" id="logo" class="split" data-splitting>Global Positioning System – Typeface</a>
+    <a href="#" class="button links">Download font</a>
+    <a href="./" class="button links">← back to map</a>
+  </header>
+
+  <main class="contentPage">
+    <section class="infoBox">
+      <h1>About the project</h1>
+      <p>In this project I figured out, how to draw Letters in my surrounding. With the help of <a href="https://www.komoot.de/collection/1350410/" target="_blank">komoot</a> I planed routes and cycled them with my bike. With the GPS-Tracking I got a gpx-File for every Letter. I implemented those files in a map and made it interactive.</p>
+    </section>
+
+    <section class="infoBox">
+      <img src="img/gps-graphic.gif" alt="GPS graphic" class="blendMulti"><br>
+      <!-- <small>
+        <a title="El pak at English Wikipedia, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:ConstellationGPS.gif" target="_blank">El pak at English Wikipedia, Public domain, via Wikimedia Commons</a>
+      </small> -->
+    </section>
+
+    <section class="infoBox">
+      <h1>Upload your own GPS Letters</h1>
+      <p>If you tracked a Letter on a Map, let me know and upload the GPX- or KML-File.</p>
+      <a href="https://forms.gle/dhkiUdxH2m6STUoS8" class="button btn-text" target="_blank">Upload your own GPS Letter</a>
+    </section>
+    <section class="infoBox">
+      <p>This is a self-initialised Project by <a href="https://ferdinands.org/" title="Ferdinand Sorg" target="_blank">Ferdinand Sorg</a> in 2021.</p>
+    </section>
+
+  </main>
+
+
+  <script src='./js/jquery.min.js'></script>
+  <script src="./js/jquery-ui.min.js"></script>
+  <script src='./js/splitting.min.js'></script>
+  <script type="text/javascript">
+  $( document ).ready(function() {
+
+    $(".infoBox").each(function() {
+      let wW = $(".contentPage").innerWidth();
+      let wH = $(".contentPage").innerHeight();
+      let fW = $(this).outerWidth();
+      let fH = $(this).outerHeight();
+
+      console.log("wW is "+wW);
+      console.log("wH is "+wH);
+
+      console.log("–––––––––––––––––");
+
+      console.log("fW is "+fW);
+      console.log("fH is "+fH);
+
+      let disW = wW-fW;
+      let disH = wH-fH;
+
+      let headerHeight = 57;
+
+      $( this ).css({
+        "top": random(headerHeight, disH)+"px",
+        "left": random(0, disW)+"px",
+      });
+    });
+
+    $(".infoBox").draggable();
+  });
+
+  $('.infoBox').on('mousedown', function(event) {
+    $('.infoBox').css('z-index','1');
+    $( this ).css({
+      'z-index':'1000',
+      'cursor':'grabbing'
+    });
+  });
+
+  $('.infoBox').on('mouseup', function(event) {
+    $( this ).css('cursor','grab');
+  });
+
+  function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  </script>
+
+  <!-- activate splitting -->
+  <script> Splitting(); </script>
+</body>
+</html>
