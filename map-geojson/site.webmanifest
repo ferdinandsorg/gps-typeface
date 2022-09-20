@@ -1,0 +1,18 @@
+{
+    "name": "GPS\u2013T",
+    "short_name": "GPS\u2013T",
+    "icons": [{
+            "src": "img/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "img/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#aef553",
+    "background_color": "#aef553",
+    "display": "standalone"
+}

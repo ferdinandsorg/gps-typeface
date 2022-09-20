@@ -8,51 +8,137 @@
 <!--+ a website made by ferdinand sorg +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GPS–T</title>
-  <!-- <link rel="stylesheet" href="./css/archivo.css"> -->
-  <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Positioning System – Typeface (GPS–T)</title>
+    <!-- Primary Meta Tags -->
+    <title>Global Positioning System – Typeface (GPS–T)</title>
+    <meta name="title" content="Global Positioning System – Typeface (GPS–T)">
+    <meta name="description" content="An experimental typeface generated through GPS tracking. Explore the Typeface and submit your own GPS tracked letters.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gps-t.ferdinands.org/">
+    <meta property="og:title" content="Global Positioning System – Typeface (GPS–T)">
+    <meta property="og:description" content="An experimental typeface generated through GPS tracking. Explore the Typeface and submit your own GPS tracked letters.">
+    <meta property="og:image" content="img/gps-t-header.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gps-t.ferdinands.org/">
+    <meta property="twitter:title" content="Global Positioning System – Typeface (GPS–T)">
+    <meta property="twitter:description" content="An experimental typeface generated through GPS tracking. Explore the Typeface and submit your own GPS tracked letters.">
+    <meta property="twitter:image" content="img/gps-t-header.jpg">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#aef553">
+    <meta name="apple-mobile-web-app-title" content="GPS&ndash;T">
+    <meta name="application-name" content="GPS&ndash;T">
+    <meta name="msapplication-TileColor" content="#aef553">
+    <meta name="theme-color" content="#aef553">
+
+    <link rel="stylesheet" href="./css/archivo.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
-  <header class="header">
-    <button type="button" class="arrows button" name="arrowPrev" id="arrowPrev">←</button>
-    <a href="#" id="logo" class="split" data-splitting>GPS–T <div id="coordinates"><span class="gms"></span></div></a>
-    <a href="#" class="button links download">Download font</a>
-    <a href="about.html" class="button links">About</a>
-    <button type="button" class="arrows button" name="arrowNext" id="arrowNext">→</button>
-  </header>
+    <header class="header">
+        <button type="button" class="arrows button" name="arrowPrev" id="arrowPrev">←</button>
+        <a href="#" id="logo" class="split" data-splitting>GPS–T <div id="coordinates"><span class="gms"></span></div></a>
+        <button type="button" class="arrows button" name="arrowNext" id="arrowNext">→</button>
+    </header>
 
-  <div id="map"></div>
-
-  <nav class="arrowNav">
+    <nav class="about">
+        <button type="button" class="button small" id="openAbout">About</button>
+    </nav>
 
 
-  </nav>
+    <div id="map"></div>
 
-  <footer class="letterControl">
-    <ul id="letterOverview"></ul>
-  </footer>
+    <footer class="letterControl">
+        <ul id="letterOverview"></ul>
+    </footer>
 
-  <div class="navigationTool">
-    <span class="cursorLine verticalCursor"></span>
-    <span class="cursorLine horizontalCursor"></span>
-    <span class="cursorPoint"></span>
-  </div>
+    <div class="popup" id="missingLetter">
+        <a class="closePopup"><button class="button">close</button></a>
+        <div class="popupWrapper">
+            <div class="floating-logo">
+                <div class="wrapper">
+                    <div class="marquee">
+                        <h1 class="logo split" data-splitting>Global Positioning System – Typeface</h1>
+                        <h1 class="rotating-world">🌍</h1>
+                        <h1 class="logo split" data-splitting>Global Positioning System – Typeface</h1>
+                        <h1 class="rotating-world">🌍</h1>
+                        <h1 class="logo split" data-splitting>Global Positioning System – Typeface</h1>
+                        <h1 class="rotating-world">🌍</h1>
+                        <h1 class="logo split" data-splitting>Global Positioning System – Typeface</h1>
+                        <h1 class="rotating-world">🌍</h1>
+                    </div>
+                </div>
+            </div>
+            <p>Letter <span class="selected-letter">🔠</span> does not exist yet. Do you want to participate?</p>
+            <a class="button" href="https://ferdinandsorg.typeform.com/to/u8qNcA3p" target="_blank">Submit letter <span class="selected-letter">🔠</span></a>
+        </div>
+    </div>
 
-  <!-- about seite formular
-  https://forms.gle/dhkiUdxH2m6STUoS8 -->
+    <div class="popup" id="about">
+        <a class="closePopup"><button class="button">close</button></a>
+        <div class="popupWrapper">
+            <div class="floating-logo">
+                <div class="wrapper">
+                    <div class="marquee">
+                        <h1 class="logo split" data-splitting>Global Positioning System – Typeface</h1>
+                        <h1 class="rotating-world">🌍</h1>
+                        <h1 class="logo split" data-splitting>Global Positioning System – Typeface</h1>
+                        <h1 class="rotating-world">🌍</h1>
+                        <h1 class="logo split" data-splitting>Global Positioning System – Typeface</h1>
+                        <h1 class="rotating-world">🌍</h1>
+                        <h1 class="logo split" data-splitting>Global Positioning System – Typeface</h1>
+                        <h1 class="rotating-world">🌍</h1>
+                    </div>
+                </div>
+            </div>
+            <section>
+                <h2>About the project</h2>
+                <p>In this project I figured out, how to draw letters in my surrounding. I planed routes and cycled them with my bike. I implemented the routes in a map and made it interactive.</p>
+                <p>After collecting at least one letter each, I will create a downloadable font.</p>
+            </section>
 
-  <script src='./js/jquery.min.js'></script>
-  <script src='./js/mapbox-gl.js'></script>
-  <script src='./js/turf.min.js'></script>
-  <script src='./js/splitting.min.js'></script>
-  <script  src="./script.js"></script>
+            <section class="image">
+                <img src="img/gps-graphic.gif" alt="GPS graphic" class="blendMulti"><br>
+            </section>
 
-  <!-- activate splitting -->
-  <script> Splitting(); </script>
+            <section>
+                <h2>Submit your own letter</h2>
+                <p>If you tracked a letter on a map and want to participate on this project let me know!</p>
+                <p>For planing and tracking you can use tools like <a href="https://www.komoot.de" target="_blank">komoot</a> or <a href="https://www.strava.com" target="_blank">Strava</a>.</p>
+                <a class="button" href="https://ferdinandsorg.typeform.com/to/u8qNcA3p" target="_blank">Submit your own letter</a>
+            </section>
+            <section>
+                <h2>Info</h2>
+                <p>This is a self-initialised Project by <a href="https://ferdinands.org/" title="Ferdinand Sorg" target="_blank">Ferdinand Sorg</a> in 2021–2022.</p>
+            </section>
+        </div>
+    </div>
+
+    <script src='./js/jquery.min.js'></script>
+    <script src='./js/mapbox-gl.js'></script>
+    <script src='./js/turf.min.js'></script>
+    <script src='./js/splitting.min.js'></script>
+    <script src="./script.js"></script>
+
+    <script>
+        // activate splitting
+        Splitting();
+    </script>
 </body>
+
 </html>
