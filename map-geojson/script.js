@@ -98,7 +98,7 @@ function loadLetter(geojson, letter) {
 $(document).on("click touchend", ".letterButton, .char", function() {
 
     // get letter
-    letter = $(this).attr("data-char");
+    letter = $(this).attr("data-char").toLowerCase();
     // $('#letterOverview').animate({ scrollLeft: $(this).offset().left }, 'slow');
     checkAviableLetter(letter);
 });
